@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/www/css/style.css" />
+    <title>Contact Example</title>
+    <script>
+		var path2root = "file:///android_asset/www/";
+    </script>
+  </head>
+  <body onLoad="loadTemplates(path2root)">
+   	<div data-include="header"></div>
+    <div id="app">
+    	<div id="scroller">
+			<h1>Example</h1>
+			<p>Find Contacts</p>
+			<form>
+				<input id="name" name="name" type="text">
+			</form>
+			<ul id="output"></ul>
+    	</div>
+    </div>
+   	<div data-include="footer"></div>
+   	<div data-include="menu"></div>
+    <script src="file:///android_asset/www/js/jquery.js"></script>
+    <script type="text/javascript" src="file:///android_asset/www/js/iscroll.js"></script>
+    <script type="text/javascript" src="file:///android_asset/www/js/plugins.js"></script>
+   	<script type="text/javascript" src="file:///android_asset/www/cordova-2.2.0.js"></script>
+    <script type="text/javascript" src="file:///android_asset/www/js/index.js"></script>
+    <script>
+    app.initialize();
+    
+    $("#name").keyup(function () {
+        var options = new ContactFindOptions();
+        var value = $(this).val();
+        options.filter = value; 
+        var fields = ["displayName", "name", "phoneNumbers", "emails"];
+        navigator.contacts.find(fields, onSuccess, onError, options);
+    }).keyup();
+
+    // onSuccess: Get a snapshot of the current contacts
+    //
+    function onSuccess(contacts) {
+        for (var i=0; i<contacts.length; i++) {
+        	var list = "";
+        	list += "<li>" + contacts[i].displayName + "</li>";
+        	list += "<li>" + contacts[i].name.formatted + "</li>";
+        	list += "<li>" + contacts[i].phoneNumbers[0] + "</li>";
+        	list += "<li>" + contacts[i].emails + "</li>";
+            $('#output').children().fadeOut();
+            $('#output').empty().prepend(list);
+        }
+    }
+
+    // onError: Failed to get the contacts
+    //
+    function onError(contactError) {
+        alert('onError!');
+    }
+
+    </script>
+  </body>
+</html>

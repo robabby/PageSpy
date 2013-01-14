@@ -1,0 +1,164 @@
+/*
+==|== Fonts ==|==
+  Trade Gothic:
+  font-family: 'TradeGothicLTStdBdCnNo.20';
+  font-family: 'TradeGothicLTStdLight';
+
+  Big Noodle:
+  font-family: 'BigNoodleTitlingRegular';
+  font-family: 'BigNoodleTitlingOblique';
+  
+  Swiss:
+  font-family: 'Swiss721Light';
+  font-family: 'Swiss721Medium';
+  font-family: 'Swiss721Bold';
+====================================================================================================================== */
+
+* {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    /* -webkit-user-select: none;                  prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-box-sizing: border-box; 			/* Safari/Chrome, other WebKit */
+	-webkit-font-smoothing: antialiased;		
+    text-rendering: optimizeLegibility;
+    -webkit-overflow-scrolling: touch;
+}
+body, html {
+	display:block;
+	position:relative;
+    width:100%;
+    height:100%;
+}
+body {
+    margin:0px;
+    padding:0px;
+    background-color:#000;
+    background-image:url(file:///android_asset/www/img/grey2.jpg);
+  	font-family: 'TradeGothicLTStdLight';
+    font-size:12px;
+    text-transform:uppercase;
+}
+ul, li {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+#header {
+	display:block;
+	position:fixed;
+	width:100%;
+	height:10%;
+	left:0px;
+	right:0px;
+	top:0px;
+	background-color:#333;
+	box-shadow:0px 0px 15px 2px rgba(0, 0, 0, .75);
+	z-index:9999;
+	
+	color:#fff;
+}
+#header .home {
+	display:block;
+	position:absolute;
+	width:15%;
+	height:100%;
+	background-color:rgba(0, 0, 0, .25);
+}
+#header .home img {
+	display:block;
+	position:absolute;
+	width:50px;
+	top:50%;
+	left:50%;
+	margin:-25px 0 0 -25px;
+}
+#header .home:hover, #header .home:active {
+	background-color: rgba(50, 150, 255, 1);
+}
+#footer {
+	display:none;
+	position:fixed;
+	width:100%;
+	height:10%;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background-color:#333;
+	z-index:9999;
+	
+	color:#fff;
+}
+
+
+#menu {
+	display:block;
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, .85);
+	opacity:0;
+	z-index:9999;
+}
+#menu a {
+	display:block;
+	position:relative;
+	padding:15px 10px;
+	background-color: rgba(0, 0, 0, 0);
+	
+	color:#fff;
+	text-align:center;
+	font-size:32px;
+	text-decoration:none;
+    font-family: 'TradeGothicLTStdBdCnNo.20';
+}
+#menu a:hover, #menu a:active {
+	background-color: rgba(50, 150, 255, 1);
+}
+
+/* Portrait layout (default) */
+#app {
+    position:absolute;
+    left:0%;
+    top:10%;
+    height:90%;                 
+    width:100%; 
+    margin-top:0%;      
+    background-repeat:repeat;
+    text-align:center;
+    overflow:auto;
+    opacity:1;
+}
+#scroller {
+	position:absolute;
+	width:100%;
+    background-color:#fff;
+}
+#history-list li {
+	display:block;
+	position:relative;
+	padding:15px 10px;
+	text-align:left;
+	border-bottom:2px solid #ccc;
+	font-family: 'TradeGothicLTStdLight';
+	font-size:25px;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    #app {
+        top:10%;
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}

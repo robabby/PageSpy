@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" href="file:///android_asset/www/css/fonts/BigNoodle/stylesheet.css">
+		<link rel="stylesheet" href="file:///android_asset/www/css/fonts/TradeGothic/stylesheet.css">
+		<link rel="stylesheet" href="file:///android_asset/www/css/fonts/Swiss/stylesheet.css">
+        <link rel="stylesheet" href="file:///android_asset/www/css/style.css" />
+        <title>PageSpy</title>
+        <script>
+        	var path2root = "file:///android_asset/www/";
+		</script>
+		<style>
+		#loading {
+			display: none;
+			position: absolute;
+			width:100%;
+			height:100%;
+			background-color:#fff;
+		}
+		#circleG{
+			display: block;
+			position: absolute;
+
+			width:149.33333333333334px;
+		}
+
+		.circleG{
+			background-color:#FFFFFF;
+			float:left;
+			height:32px;
+			margin-left:17px;
+			width:32px;
+			-webkit-animation-name:bounce_circleG;
+			-webkit-animation-duration:1.9500000000000002s;
+			-webkit-animation-iteration-count:infinite;
+			-webkit-animation-direction:linear;
+			-webkit-border-radius:21px;
+			border-radius:21px;
+		}
+		#circleG_1{-webkit-animation-delay:0.39s;}
+		#circleG_2{-webkit-animation-delay:0.9099999999999999s;}
+		#circleG_3{-webkit-animation-delay:1.1700000000000002s;}
+
+		@-webkit-keyframes bounce_circleG{
+			0%{}
+			50%{background-color:#000000}
+			100%{}
+		}
+
+		#wrapper {
+			display:block;
+			position: relative;
+			width:100%;
+			height:auto;
+			border-bottom:3px solid #ccc;
+		}
+		input[type="text"] {
+			display:block;
+			position:relative;
+			width:90%;
+			height:60px;
+			margin:5% auto;
+			font-size:32px;
+			line-height:50px;
+			color:#000;
+		}
+		.submit {
+			display: block;
+			position: relative;
+			width: 90%;
+			height: 50px;
+			background-color:#3CF;
+			margin: 0 auto;
+
+			color:#fff;
+			text-align: center;
+			line-height:50px;
+			text-decoration: none;
+			font-size: 32px;
+		}
+		</style>
+	</head>
+    <body onLoad="loadTemplates(path2root)">
+    	<div data-include="header"></div>
+        <div id="app">
+        	<div id="scroller">
+        		<div class="wrapper">
+        			<div id="loading">
+	        			<div id="circleG">
+							<div id="circleG_1" class="circleG"></div>
+							<div id="circleG_2" class="circleG"></div>
+							<div id="circleG_3" class="circleG"></div>
+						</div>
+					</div>
+    				<input type="text" name="url" id="url" />
+    				<button class="submit" id="submit">Submit</button>
+        		</div>
+        		<div id="output">
+		        	<ul id="history-list">
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        		<li>Something interesting</li>
+		        	</ul>
+		        </div><!-- #output -->
+	        </div><!-- #scroller -->
+        </div><!-- #app -->
+    	<div data-include="footer"></div>
+    	<div data-include="menu"></div>
+        <script src="file:///android_asset/www/js/jquery.js"></script>
+        <script src="file:///android_asset/www/js/plugins.js"></script>
+        <script src="file:///android_asset/www/cordova-2.2.0.js"></script>
+        <script src="file:///android_asset/www/js/index.js"></script>
+        <script>
+            app.initialize();
+            //var softkeyboard = window.cordova.plugins.SoftKeyBoard;
+        	//document.getElementById('submit').addEventListener('touchstart', submitForm, false);  
+        </script>
+    </body>
+</html>

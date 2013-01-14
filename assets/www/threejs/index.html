@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Three.js</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="cleartype" content="on"> 
+    <script>
+    	var path2root = "../";
+    </script>  
+</head>
+    <body onLoad="loadTemplates(path2root)">
+    	<div data-include="header"></div>
+        <div id="container"><div>
+        <div data-include="footer"></div>
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="../cordova-2.2.0.js"></script>
+        <script type="text/javascript" src="../js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+		<script src="build/three.js"></script>
+        <script>
+            var camera, scene, renderer;
+            var geometry, material, mesh;
+
+            init();
+            animate();
+
+            function init() {
+                camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+                camera.position.z = 1000;
+
+                scene = new THREE.Scene();
+
+                geometry = new THREE.CubeGeometry( 200, 200, 200 );
+                material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
+
+                mesh = new THREE.Mesh( geometry, material );
+                scene.add( mesh );
+
+                renderer = new THREE.CanvasRenderer();
+                renderer.setSize( window.innerWidth, window.innerHeight );
+
+                document.body.appendChild( renderer.domElement );
+            }
+
+            function animate() {
+
+                // note: three.js includes requestAnimationFrame shim
+                requestAnimationFrame( animate );
+
+                mesh.rotation.x += 0.01;
+                mesh.rotation.y += 0.02;
+
+                renderer.render( scene, camera );
+
+            }
+        </script>
+	</body>
+</html>
