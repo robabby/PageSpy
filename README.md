@@ -7,4 +7,4 @@ PageSpy is an Android focused application (for now).  Built with PhoneGap, and t
 #### Open Source
 PageSpy is an open source endeavor.  If you feel compelled to get involved, fork me!
 
-More information at http://pagespy.robabby.com
+http://pagespy.robabby.com
